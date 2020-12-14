@@ -1,0 +1,118 @@
+@import './src/styles';
+
+@include xl;
+@include large;
+@include medium;
+@include small;
+
+.content-div-center {
+  @include content-div-center;
+  background-color: #e7dacf;
+  padding-top: 50px;
+}
+
+.experience {
+  @include content-row;
+  justify-content: space-between;
+  width: 600px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.buttons{
+  @include content-row;
+  width: 280px;
+}
+
+.title {
+  @include title;
+  margin-bottom: 30px;
+}
+
+.blue-box {
+  @include blue-box;
+}
+
+.job {
+  margin-bottom: 30px;
+  height: 300px;
+  width: 600px;
+  background-color: white;
+  @include content-row;
+  @include box-shadow
+}
+
+.job-position {
+  height: 250px;
+  width: 250px;
+  @include content-div-start-left;
+}
+.job-position p {
+  margin: 0 0 3px 0;
+}
+.job-position h3 {
+  margin-top: 0;
+}
+
+.job-text {
+  height: 250px;
+  width: 250px;
+  @include content-div-start-left;
+}
+.date {
+  color: blue;
+}
+
+.skill-section {
+  margin-bottom: 30px;
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  @include content-row;
+  @include box-shadow
+}
+
+.skills {
+  height: 250px;
+  width: 200px;
+  padding-left: 20px;
+  @include content-div-start-left;
+  justify-content: flex-start;
+}
+.skills h3 {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .job {
+    margin-bottom: 30px;
+    height: 400px;
+    width: 350px;
+    background-color: white;
+    @include content-div-center;
+  }
+  .job-text .job-position {
+    height: 200px;
+    width: 200px;
+    padding: 0 5px;
+  }
+  .experience {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 313px) {
+  .job {
+    width: 250px;
+  }
+  .job-text {
+    height: 220px;
+    width: 220px;
+  }
+  .job-position {
+    height: 220px;
+    width: 220px;
+  }
+}

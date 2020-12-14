@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="name-and-title">
+    <div class="name">
+      <div class="blue-box"></div>
+      <h2>Manuela Brunner</h2>
+    </div>
+     <p> / FRONTEND DEVELOPER</p>
+  </div>
+
+  <nav>
+    <button class="hamburger hamburger--spin" type="button" appHamburgerToggle>
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    </button>
+    <div class="navigation-links" [@collapse]="collapse" appHamburgerToggle>
+      <ul>
+        <li routerLinkActive="active"><a routerLink="about" >ABOUT</a></li>
+        <li routerLinkActive="active"><a routerLink="cv">CV</a></li>
+        <li routerLinkActive="active"><a routerLink="projects">PROJECTS</a></li>
+        <li routerLinkActive="active"><a routerLink="contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+</div>

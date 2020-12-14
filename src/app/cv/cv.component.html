@@ -1,0 +1,58 @@
+<div class="content-div-center">
+  <div class="title">
+    <div class="blue-box"></div>
+    <h1>Resume</h1>
+  </div>
+  <div class="experience content-row">
+    <h2>Experience</h2>
+    <div class="buttons">
+      <a routerLink="/cv"><app-button [blue]="true" [buttonName]="'download CV'"></app-button></a>
+      <a routerLink="/cv"><app-button [blue]="true" [buttonName]="'job references'"></app-button></a>
+    </div>
+  </div>
+
+  <div class="job" *ngFor="let job of cvData">
+    <div class="job-position">
+      <h2 class="date">{{ job.date }}</h2>
+      <h3>{{ job.position | uppercase }}</h3>
+      <p>{{ job.firma }}</p>
+      <p><i class="fas fa-map-marker-alt"></i> {{ job.standort }}</p>
+    </div>
+    <div class="job-text">
+      <p>{{ job.text }}</p>
+    </div>
+  </div>
+
+  <div class="experience content-row">
+    <h2>Education</h2>
+  </div>
+
+  <div class="job" *ngFor="let job of educationData">
+    <div class="job-position">
+      <h2 class="date">{{ job.date }}</h2>
+      <h3>{{ job.position | uppercase }}</h3>
+      <p>{{ job.firma }}</p>
+      <p><i class="fas fa-map-marker-alt"></i> {{ job.standort }}</p>
+    </div>
+    <div class="job-text">
+      <p>{{ job.text }}</p>
+    </div>
+  </div>
+
+  <div class="experience content-row">
+    <h2>Skills</h2>
+  </div>
+
+  <div class="skill-section">
+    <div class="skills" *ngFor="let skills of skillsData">
+      <h2 class="date">{{ skills.title }}</h2>
+        <h3 class="title" *ngFor="let skillItem of skills.subSkills">
+          <div class="blue-box"></div>{{ skillItem }}
+        </h3>
+
+
+
+    </div>
+  </div>
+
+</div>
