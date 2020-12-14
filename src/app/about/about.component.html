@@ -1,0 +1,19 @@
+<div class="beige"></div>
+<div class="container">
+  <div class="content-div content-div-center content-about-card">
+      <img src="./assets/img/Artboard.png" alt="Photo" class="photo">
+    <h2 class="name">{{ aboutData.surName }} {{ aboutData.name }}</h2>
+    <div class="blue-stripe"></div>
+    <p>{{ aboutData.jobName | uppercase }}</p>
+  </div>
+  <div class="content-div content-div-start-left">
+    <h1>{{ aboutData.title }}</h1>
+    <h3>{{ aboutData.subTitle }}</h3>
+    <div class="buttons">
+      <a routerLink="/cv"><app-button [blue]="true" [buttonName]="'CV'"></app-button></a>
+      <a routerLink="/projects"><app-button [white]="true" [buttonName]="'PROJECTS'"></app-button></a>
+    </div>
+    <p>{{ aboutData.text }}</p>
+  </div>
+</div>
+

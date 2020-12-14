@@ -1,0 +1,24 @@
+@import './src/styles';
+
+.content-div-center {
+  @include content-div-center;
+  background-color: #e7dacf;
+}
+
+.content-row {
+  @include content-row;
+}
+
+.job {
+  height: 350px;
+  width: 700px;
+  @include content-row;
+
+  &__job-position {
+  @include content-div-start-left;
+  }
+
+ &__job-text {
+   @include content-div-start-left;
+ }
+}
