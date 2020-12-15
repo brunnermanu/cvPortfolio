@@ -81,6 +81,11 @@
 }
 .skills h3 {
   margin-bottom: 0;
+
+}
+
+.date {
+  color: blue;
 }
 
 @media (max-width: 640px) {
@@ -101,7 +106,6 @@
     width: 100%;
   }
 }
-
 
 @media (max-width: 313px) {
   .job {
