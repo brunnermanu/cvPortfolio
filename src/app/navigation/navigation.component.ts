@@ -22,6 +22,7 @@ import {animate, AUTO_STYLE, state, style, transition, trigger} from '@angular/a
     ])
   ]
 })
+
 export class NavigationComponent implements OnInit {
   collapse = true;
 

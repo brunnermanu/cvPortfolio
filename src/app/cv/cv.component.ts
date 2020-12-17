@@ -8,10 +8,13 @@ import { DataService } from '../shared/data.service';
 })
 export  class CvComponent implements OnInit {
   cvData = [];
+  educationData = [];
+  skillsData = [];
 
   constructor( public data: DataService) {
-    console.log(this.data.getCv());
     this.cvData = this.data.getCv();
+    this.educationData = this.data.getEducation();
+    this.skillsData = this.data.getSkills();
   }
 
 
