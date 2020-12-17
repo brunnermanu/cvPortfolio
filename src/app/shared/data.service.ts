@@ -3,6 +3,7 @@ import { About } from './about.model';
 import { Cv } from './cv.model';
 import {Skill, Skills} from './skills.model';
 
+
 @Injectable()
 export class DataService {
   about: About = new About(
@@ -58,5 +59,4 @@ export class DataService {
   getSkills(): Skill[] {
     return this.skills;
   }
-
 }
