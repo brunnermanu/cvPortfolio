@@ -1,18 +1,35 @@
-import {Injectable} from '@angular/core';
-import { About } from './about.model';
-import { Cv } from './cv.model';
+import {Injectable, OnInit} from '@angular/core';
+import {About, AboutInterface, AboutType} from './about.model';
+import {Cv} from './cv.model';
 import {Skill, Skills} from './skills.model';
+import {Observable, Subject, Subscription} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import {DataStorageService} from './data-storage.service';
 
 
 @Injectable()
 export class DataService {
-  about: About = new About(
-    'Manuela',
-    'Brunner',
-    'Frontend Developer',
-    'Hello',
-    'Who I am and what I do.',
-    'I am Manuela Brunner and I really love Frontend Development.');
+  aboutChanged$ = new Subject<AboutType>();
+  startedEditing = new Subject<string>();
+  constructor(private http: HttpClient, private dataStorage: DataStorageService) {
+
+  }
+
+  // updateAboutName(name: string): void {
+  //   this.aboutChanged$.next({surName: name});
+  // }
+
+
+  about: AboutType = {};
+    // about: About = new About(
+    // './assets/img/Artboard.png',
+    // 'Manuela',
+    // 'Brunner',
+    // 'Frontend Developer',
+    // 'Hello',
+    // 'Who I am and what I do.',
+    // 'I am Manuela Brunner and I really love Frontend Development.');
+
 
   cv: Cv[] = [
     new Cv('Jan/2021 - Present',
@@ -48,9 +65,48 @@ export class DataService {
       ['responsible', 'team player', 'flexible'])
   ];
 
+
+  storeAboutData() {
+    const aboutData = this.getAbout();
+    this.http.put('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/about.json', aboutData)
+      .subscribe(response => {
+        console.log(response);
+      });
+  }
+
+  fetchAboutData(): Observable<AboutType> {
+    return this.http.get<AboutType>('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/about.json');
+  }
+
+  // storeCvData() {
+  //   const cvData = this.getCv();
+  //   this.http.put('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/cv.json', cvData)
+  //     .subscribe(response => {
+  //       console.log(response);
+  //     });
+  // }
+  //
+  // fetchCvData() {
+  //   this.http.get<Cv>('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/cv.json')
+  //     .subscribe(cv => {
+  //       this.cv = cv;
+  //       console.log('fetch', cv);
+  //
+  //     });
+  // }
+
+  getAbout(): Observable<AboutType> {
+    return this.aboutChanged$.asObservable();
+  }
+
+  updateAbout(newValue: AboutType) {
+    this.aboutChanged$.next(newValue);
+  }
+
   getCv(): any {
     return this.cv;
   }
+
 
   getEducation(): any {
     return this.education;
@@ -59,4 +115,6 @@ export class DataService {
   getSkills(): Skill[] {
     return this.skills;
   }
+
+
 }

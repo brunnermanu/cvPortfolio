@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~hamburgers/_sass/hamburgers/hamburgers.scss';
+$hamburger-layer-width: 20px !default;
+$hamburger-layer-height: 4px !default;
+$hamburger-layer-spacing: 4px !default;
 
 body {
   font-family: 'Roboto', sans-serif;

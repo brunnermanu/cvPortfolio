@@ -109,8 +109,13 @@
 }
 
 @media (max-width: 313px) {
-  .job {
+  .job,
+  .skill-section {
     width: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   .job-text {
     height: 220px;
@@ -120,4 +125,6 @@
     height: 220px;
     width: 220px;
   }
+
+
 }

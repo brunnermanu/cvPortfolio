@@ -12,6 +12,11 @@ import { HamburgerToggleDirective } from './navigation/hamburger-toggle.directiv
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './button/button.component';
 import { DataService } from './shared/data.service';
+import { EditPortfolioComponent } from './edit-portfolio/edit-portfolio.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { EditButtonComponent } from './edit-button/edit-button.component';
+import { Project } from './projects/project.model.ts/project.model.ts.component';
 
 
 @NgModule({
@@ -24,11 +29,17 @@ import { DataService } from './shared/data.service';
     ContactComponent,
     HamburgerToggleDirective,
     ButtonComponent,
+    EditPortfolioComponent,
+    EditButtonComponent,
+    Project.Model.TsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

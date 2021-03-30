@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { CvComponent } from './cv/cv.component';
 import { ProjectsComponent } from './projects/projects.component';
-import {ContactComponent} from './contact/contact.component';
+import { ContactComponent } from './contact/contact.component';
+import { EditPortfolioComponent } from './edit-portfolio/edit-portfolio.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'cv', component: CvComponent},
   { path: 'projects', component: ProjectsComponent},
   { path: 'contact', component: ContactComponent },
+  { path: 'edit-portfolio', component: EditPortfolioComponent}
 ];
 
 @NgModule({

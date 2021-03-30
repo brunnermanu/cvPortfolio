@@ -1,5 +1,10 @@
 @import './src/styles';
 
+@import '~hamburgers/_sass/hamburgers/hamburgers.scss';
+$hamburger-layer-width: 20px !default;
+$hamburger-layer-height: 4px !default;
+$hamburger-layer-spacing: 4px !default;
+
 @include small;
 @include medium;
 @include large;
@@ -43,6 +48,9 @@ p {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
+}
+.hamburger-box {
+  font-size: small;
 }
 
 button:focus {
