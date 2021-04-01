@@ -15,14 +15,6 @@
   z-index: -1;
 }
 
-@media (max-width: 640px) {
-  .beige {
-    width: 100%;
-    background-color: #e7dacf;
-
-  }
-}
-
 .container {
   height: 800px;
 }
@@ -61,8 +53,28 @@
 }
 
 @media(max-width: 640px ) {
+  .container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .beige {
+    width: 100%;
+    background-color: #e7dacf;
+  }
   .content-div-start-left {
     padding: 0 5px;
+  }
+
+  .content-about-card {
+    height: 400px;
+  }
+
+  .photo {
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
   }
 }
 

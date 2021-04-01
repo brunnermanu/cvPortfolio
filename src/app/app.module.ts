@@ -16,7 +16,7 @@ import { EditPortfolioComponent } from './edit-portfolio/edit-portfolio.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { EditButtonComponent } from './edit-button/edit-button.component';
-import { Project } from './projects/project.model.ts/project.model.ts.component';
+import { ProjectItemComponent } from './projects/project-item/project-item.component';
 
 
 @NgModule({
@@ -31,7 +31,7 @@ import { Project } from './projects/project.model.ts/project.model.ts.component'
     ButtonComponent,
     EditPortfolioComponent,
     EditButtonComponent,
-    Project.Model.TsComponent,
+    ProjectItemComponent,
   ],
   imports: [
     BrowserModule,

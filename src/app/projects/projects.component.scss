@@ -1,1 +1,36 @@
 @import './src/styles';
+
+.container-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7dacf;
+}
+
+.container {
+  position: relative;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.title {
+  @include title;
+  margin-top: 40px;
+}
+
+.blue-box {
+  @include blue-box;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+  }
+}

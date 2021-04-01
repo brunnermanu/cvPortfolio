@@ -67,15 +67,15 @@
 .skill-section {
   margin-bottom: 30px;
   height: 400px;
-  width: 600px;
+  width: 750px;
   background-color: white;
   @include content-row;
   @include box-shadow
 }
 
 .skills {
-  height: 250px;
-  width: 200px;
+  height: 260px;
+  width: 250px;
   padding-left: 20px;
   @include content-div-start-left;
   justify-content: flex-start;
@@ -92,13 +92,23 @@
 @media (max-width: 640px) {
   .job {
     margin-bottom: 30px;
-    height: 400px;
+    height: 450px;
     width: 350px;
     background-color: white;
     @include content-div-center;
   }
+  .skill-section {
+    @include content-div-center;
+    justify-content: space-evenly;
+    height: 850px;
+    width: 350px;
+    background-color: white;
+  }
+  .skills {
+    height: auto;
+  }
   .job-text .job-position {
-    height: 200px;
+    height: auto;
     width: 200px;
     padding: 0 5px;
   }
@@ -108,17 +118,19 @@
   }
 }
 
-@media (max-width: 313px) {
-  .job,
-  .skill-section {
+@media (max-width: 330px) {
+  .job {
     width: 250px;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
+  .skill-section {
+    width: 250px;
+  }
   .job-text {
-    height: 220px;
+    height: auto;
     width: 220px;
   }
   .job-position {
