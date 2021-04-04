@@ -13,12 +13,12 @@ export class ProjectsComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    // is needed to update my data until forms are ready
     // this.dataService.storeProjects()
     //   .subscribe( response => {
     //   console.log('projects', response);
     // });
     this.dataService.fetchProjects().subscribe(p => {
-      console.log('p', p);
       this.projects = p;
     });
   }

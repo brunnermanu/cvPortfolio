@@ -27,7 +27,7 @@
 
 .title {
   @include title;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .blue-box {
@@ -59,6 +59,10 @@
   height: 250px;
   width: 250px;
   @include content-div-start-left;
+}
+
+.job-text ul {
+  margin: 2px 0;
 }
 .date {
   color: #0000ff;

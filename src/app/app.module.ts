@@ -8,7 +8,6 @@ import { AboutComponent } from './about/about.component';
 import { CvComponent } from './cv/cv.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
-import { HamburgerToggleDirective } from './navigation/hamburger-toggle.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './button/button.component';
 import { DataService } from './shared/data.service';
@@ -17,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { EditButtonComponent } from './edit-button/edit-button.component';
 import { ProjectItemComponent } from './projects/project-item/project-item.component';
+import { AppUiModule } from './app-ui.module';
 
 
 @NgModule({
@@ -27,7 +27,6 @@ import { ProjectItemComponent } from './projects/project-item/project-item.compo
     CvComponent,
     ProjectsComponent,
     ContactComponent,
-    HamburgerToggleDirective,
     ButtonComponent,
     EditPortfolioComponent,
     EditButtonComponent,
@@ -39,7 +38,8 @@ import { ProjectItemComponent } from './projects/project-item/project-item.compo
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppUiModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

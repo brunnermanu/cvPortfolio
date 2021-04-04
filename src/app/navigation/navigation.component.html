@@ -1,26 +1,32 @@
 <div class="container">
-  <div class="name-and-title">
-    <div class="name">
-      <div class="blue-box"></div>
-      <h2>Manuela Brunner</h2>
+  <div class="button-and-name">
+    <div class="name-and-title">
+      <div class="name">
+        <div class="blue-box"></div>
+        <h2>Manuela Brunner</h2>
+      </div>
+      <p>FRONTEND DEVELOPER</p>
     </div>
-     <p> / FRONTEND DEVELOPER</p>
-  </div>
-
-  <nav>
-    <button class="hamburger hamburger--spin" type="button" appHamburgerToggle>
-    <span class="hamburger-box">
-      <span class="hamburger-inner"></span>
-    </span>
+    <button mat-button class="menu-button" (click)="sidenav.toggle()">
+      <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
     </button>
-    <div class="navigation-links" [@collapse]="collapse" appHamburgerToggle>
-      <ul>
-        <li routerLinkActive="active"><a routerLink="about" >ABOUT</a></li>
-        <li routerLinkActive="active"><a routerLink="cv">CV</a></li>
-        <li routerLinkActive="active"><a routerLink="projects">PROJECTS</a></li>
-        <li routerLinkActive="active"><a routerLink="contact">CONTACT</a></li>
-      </ul>
-    </div>
-  </nav>
-
+  </div>
 </div>
+<div class="container">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav autoFocus="false" mode="over" [(opened)]="isMenuOpen" class="sidenav" position="end"   (click)="onSidenavClick()">
+      <a mat-button routerLink="about">About</a>
+      <a mat-button routerLink="cv">CV</a>
+      <a mat-button routerLink="projects">Projects</a>
+
+<!--      // TODO make a next goals section in the contact component-->
+<!--      <a mat-button routerLink="contact">next goals</a>-->
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

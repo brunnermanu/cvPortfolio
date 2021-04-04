@@ -5,6 +5,7 @@
     <h2 class="name">{{ aboutData?.surName }} {{ aboutData?.name }}</h2>
     <div class="blue-stripe"></div>
     <p>{{ aboutData?.job | uppercase }}</p>
+    <a class="mail" href="mailto:brunner.manu@hotmail.com">brunner.manu@hotmail.com</a>
   </div>
   <div class="content-div content-div-start-left">
     <app-edit-button [white]="true" *ngIf="isEditMode" (click)="openForm()"></app-edit-button>

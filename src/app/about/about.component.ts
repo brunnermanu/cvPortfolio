@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
-import {About, AboutType} from '../shared/about.model';
-import {Router} from '@angular/router';
+import { AboutType } from '../shared/about.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -17,9 +17,11 @@ isEditMode = false;
   }
 
   ngOnInit()  {
+    // is needed to update my data until my forms are ready
    // this.data.storeAboutData().subscribe(response => {
    //   console.log(response);
    // });
+
     this.data.fetchAboutData().subscribe(about => {
       console.log('about', about);
       this.aboutData = about;
@@ -29,8 +31,4 @@ isEditMode = false;
   openForm() {
     this.router.navigateByUrl('/edit-portfolio');
   }
-  updateAbout() {
-    this.data.updateAbout({surName: 'Martina'});
-  }
-
 }
