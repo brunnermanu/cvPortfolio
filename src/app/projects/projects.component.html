@@ -1,1 +1,13 @@
-<p>projects works!</p>
+<div class="container-wrap">
+  <div class="title">
+    <div class="blue-box"></div>
+    <h1>Projects</h1>
+  </div>
+  <p class="sub-title">I made these projects during my self-study time.</p>
+  <div class="container">
+    <app-project-item
+      *ngFor="let projectElement of projects; let i = index"
+      [project]="projectElement"
+      [index]="i"></app-project-item>
+  </div>
+</div>

@@ -6,21 +6,13 @@
 @include small;
 
 .beige {
-  height: 1000px;
+  height: 100%;
   width: 40%;
   background-color: #e7dacf;
   position: absolute;
   left: 0;
-  top: 150px;
+  top: 0px;
   z-index: -1;
-}
-
-@media (max-width: 640px) {
-  .beige {
-    width: 100%;
-    background-color: #e7dacf;
-
-  }
 }
 
 .container {
@@ -40,6 +32,13 @@
   background-color: transparent;
   height: 500px;
   padding-left: 40px;
+}
+.mail {
+  color: black;
+  font-weight: 300;
+}
+.mail:hover {
+  color: blue;
 }
 
 .photo {
@@ -61,8 +60,28 @@
 }
 
 @media(max-width: 640px ) {
+  .container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .beige {
+    width: 100%;
+    background-color: #e7dacf;
+  }
   .content-div-start-left {
     padding: 0 5px;
+    margin-top: 40px;
+  }
+  .content-about-card {
+    height: 400px;
+    margin-top: 40px;
+  }
+  .photo {
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
   }
 }
 

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'cv', component: CvComponent},
   { path: 'projects', component: ProjectsComponent},
-  { path: 'contact', component: ContactComponent },
+  { path: 'goals', component: ContactComponent },
   { path: 'edit-portfolio', component: EditPortfolioComponent}
 ];
 

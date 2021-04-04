@@ -7,8 +7,9 @@
   <div class="experience content-row">
     <h2>Experience</h2>
     <div class="buttons">
-      <a routerLink="/cv"><app-button [blue]="true" [buttonName]="'download CV'"></app-button></a>
-      <a routerLink="/cv"><app-button [blue]="true" [buttonName]="'job references'"></app-button></a>
+      <a href="./assets/CVEN.pdf" target="_blank"><app-button [blue]="true" [buttonName]="'download CV (EN)'"></app-button></a>
+      <a href="./assets/CVDE.pdf" target="_blank"><app-button [blue]="true" [buttonName]="'download CV (DE)'"></app-button></a>
+      <a href="./assets/Arbeitszeugnisse.pdf" target="_blank"><app-button [blue]="true" [buttonName]="'job references'"></app-button></a>
     </div>
   </div>
 
@@ -20,7 +21,9 @@
       <p><i class="fas fa-map-marker-alt"></i> {{ job.standort }}</p>
     </div>
     <div class="job-text">
-      <p>{{ job.text }}</p>
+      <ul *ngFor="let point of job.text">
+        <li>{{ point }}</li>
+      </ul>
     </div>
   </div>
 
@@ -36,7 +39,9 @@
       <p><i class="fas fa-map-marker-alt"></i> {{ job.standort }}</p>
     </div>
     <div class="job-text">
-      <p>{{ job.text }}</p>
+      <ul *ngFor="let point of job.text">
+        <li>{{ point }}</li>
+      </ul>
     </div>
   </div>
 

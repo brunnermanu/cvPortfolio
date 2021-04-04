@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Project} from './project.model';
+import {DataService} from '../shared/data.service';
 
 @Component({
   selector: 'app-projects',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  projects: Project;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // is needed to update my data until forms are ready
+    // this.dataService.storeProjects()
+    //   .subscribe( response => {
+    //   console.log('projects', response);
+    // });
+    this.dataService.fetchProjects().subscribe(p => {
+      this.projects = p;
+    });
   }
 
 }

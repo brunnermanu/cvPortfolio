@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, NgForm} from '@angular/forms';
-import {DataService} from '../shared/data.service';
-import {About, AboutType} from '../shared/about.model';
-import {Subscription} from 'rxjs';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { DataService } from '../shared/data.service';
+import { AboutType } from '../shared/about.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-edit-portfolio',
@@ -29,6 +29,8 @@ export class EditPortfolioComponent implements OnInit {
     });
   }
 
+  // TODO make this form work to update data
+
   ngOnInit(): void {
     // this.subscription = this.dataService.startedEditing.subscribe((index: number) => {
     //   this.editedItemIndex = index;
@@ -43,39 +45,39 @@ export class EditPortfolioComponent implements OnInit {
    console.log(this.editForm);
   }
 
-  initForm() {
-    let photo = '';
-    let name = '';
-    let surname = '';
-    let job = '';
-    let title = '';
-    let subtitle = '';
-    let text = '';
+  // initForm() {
+  //   let photo = '';
+  //   let name = '';
+  //   let surname = '';
+  //   let job = '';
+  //   let title = '';
+  //   let subtitle = '';
+  //   let text = '';
 
-    if (this.editMode) {
-      const aboutData = this.dataService.getAbout().subscribe(about => {
-        photo = about.photo;
-        name = about.name;
-        surname = about.surName;
-        job = about.job;
-        title = about.title;
-        subtitle = about.subTitle;
-        text = about.text;
-      });
+    // if (this.editMode) {
+    //   const aboutData = this.dataService.getAbout().subscribe(about => {
+    //     photo = about.photo;
+    //     name = about.name;
+    //     surname = about.surName;
+    //     job = about.job;
+    //     title = about.title;
+    //     subtitle = about.subTitle;
+    //     text = about.text;
+    //   });
 
-      this.editForm = new FormGroup({
-        imagePath: new FormControl(photo),
-        name: new FormControl(name),
-        surname: new FormControl(surname),
-        job: new FormControl(job),
-        title: new FormControl(title),
-        subtitle: new FormControl(subtitle),
-        text: new FormControl(text),
-      });
+      // this.editForm = new FormGroup({
+      //   imagePath: new FormControl(photo),
+      //   name: new FormControl(name),
+      //   surname: new FormControl(surname),
+      //   job: new FormControl(job),
+      //   title: new FormControl(title),
+      //   subtitle: new FormControl(subtitle),
+      //   text: new FormControl(text),
+      // });
 
-    }
-
-  }
+  //   }
+  //
+  // }
   //   const newAbout = new About(this.editForm.value.imagePath,
   //     this.editForm.value.name,
   //     this.editForm.value.surName,

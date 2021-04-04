@@ -1,9 +1,5 @@
 @import './src/styles';
 
-@import '~hamburgers/_sass/hamburgers/hamburgers.scss';
-$hamburger-layer-width: 20px !default;
-$hamburger-layer-height: 4px !default;
-$hamburger-layer-spacing: 4px !default;
 
 @include small;
 @include medium;
@@ -19,9 +15,18 @@ $hamburger-layer-spacing: 4px !default;
   align-items: flex-start;
 }
 
+.button-and-name {
+  width: 70%;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .name-and-title {
-  padding-top: 20px;
-  width: 400px;
+  width: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -32,6 +37,9 @@ $hamburger-layer-spacing: 4px !default;
 .name {
   @include title;
 }
+.name h2 {
+  padding-right: 15px;
+}
 
 .blue-box {
   @include blue-box;
@@ -41,50 +49,47 @@ p {
   margin: 0;
 }
 
-.hamburger {
-  width: 250px;
-  padding-top: 40px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-}
-.hamburger-box {
-  font-size: small;
-}
-
-button:focus {
-  outline: none;
-}
-.navigation-links li {
-  list-style-type: none;
-  font-size: 40px;
-  margin: 10px 0;
-  cursor: pointer;
-}
-
-.navigation-links ul {
-  padding-left: 15px;
-}
-
-.navigation-links a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (max-width: 480px ) {
-  nav {
-    width: auto;
-    padding-top: 25px;
+.sidenav-container {
+  flex: 1;
+  .sidenav {
+    min-width: 300px;
+    a {
+      display: block;
+      padding: 6px 24px;
+      width: 100%;
+      text-align: left;
+      font-size: 30px;
+    }
   }
-  .navigation-links li {
-    font-size: 30px;
+  main {
+    padding: 0;
+  }
 
+}
+
+.menu-button {
+  margin-right: 24px;
+  min-width: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+@media (max-width: 630px ) {
+  .name {
+    font-size: 12px;
+  }
+  .button-and-name {
+    width:100%;
+    justify-content: space-evenly;
   }
   .name-and-title {
+    width: auto;
     flex-direction: column;
-    font-size: 11px;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
+
+
 
 
