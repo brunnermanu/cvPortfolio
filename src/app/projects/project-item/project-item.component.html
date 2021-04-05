@@ -1,0 +1,13 @@
+
+<div class="card">
+  <div class="imgBx">
+    <img [src]="project.imagePath" alt="{{ project.name }}" class="project-img" >
+  </div>
+  <div class="content">
+    <div>
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.description }}</p>
+      <a [href]="project.websitePath" target="_blank">see project</a>
+    </div>
+  </div>
+</div>
