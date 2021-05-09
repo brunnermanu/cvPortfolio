@@ -34,17 +34,10 @@ export class DataService {
 //       'Run My Accounts AG',
 //       'Stäfa, ZH',
 //       ['At Run My Accounts I can deepen my knowledge in Angular and take my skills to the next level.']),
-//     new Cv('Oct/2020 - Dec/2020',
-//       'IT-Internship',
-//       'Gadola Information Systems ',
-//       'Wallisellen, ZH',
-//       ['Installation and maintenance of the SelectLine software (ERP)',
-//       'first level support'] ),
-//     new Cv('Mar/2020 - Sept/2020',
+//     new Cv('Mar/2020 - Dec/2020',
 //       'Self-study Frontend Development',
 //       'at Home',
 //       'Schlieren, ZH',
-// tslint:disable-next-line:max-line-length
 // ['My hobby should become a job. That\'s why I decided to quit in order to work on online courses 6 days a week, to read documentation and to advance my own project (shopping list)']),
 //     new Cv('Jan/2018 - Feb/2020',
 //       'Patientendisposition',
@@ -92,7 +85,7 @@ export class DataService {
 //         'Accounting',
 //         'patient care']),
 //   ];
-//
+
   private education: Cv[] = [];
 //   education: Cv[] = [
 //     new Cv('Aug/2005 - Jul/2008',
@@ -149,7 +142,7 @@ export class DataService {
 
   storeProjects() {
     const projects = this.projects;
-    return this.http.put('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/projects.json', projects)
+    return this.http.put('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/projects.json', projects);
     // .subscribe(response => {
     //   console.log(response);
     // });
@@ -162,7 +155,7 @@ export class DataService {
 
   storeAboutData() {
     const aboutData = this.about;
-    return this.http.put('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/about.json', aboutData)
+    return this.http.put('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/about.json', aboutData);
       // .subscribe(response => {
       //   console.log(response);
       // });
