@@ -33,7 +33,7 @@ export class DataService {
 //       'Frontend Developer-Internship',
 //       'Run My Accounts AG',
 //       'Stäfa, ZH',
-//       ['At Run My Accounts I can deepen my knowledge in Angular and take my skills to the next level.']),
+//       ['At Simplificator I can deepen my knowledge in Frontend Development and learn an other Framework (React).']),
 //     new Cv('Mar/2020 - Dec/2020',
 //       'Self-study Frontend Development',
 //       'at Home',
@@ -71,7 +71,7 @@ export class DataService {
 //       'Praxis Gander und Pless',
 //       'Stans, NW',
 //       ['Contact person for technical problems of medical equipment',
-//     'Contact person for the trainees',
+//     'Contact person for our trainees',
 //     'Administrative activities, appointments',
 //     'Accounting',
 //     'patient care']),
@@ -173,8 +173,8 @@ export class DataService {
       // });
   }
 
-  fetchCvData(): Observable<Cv> {
-    return this.http.get<Cv>('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/cv.json');
+  fetchCvData(): Observable<Cv[]> {
+    return this.http.get<Cv[]>('https://cv-portfolio-8ff7b-default-rtdb.firebaseio.com/cv.json');
       // .subscribe(cv => {
       //   this.cv = cv;
       //   console.log('fetch', cv);

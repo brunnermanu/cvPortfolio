@@ -19,6 +19,7 @@ export class ProjectsComponent implements OnInit {
     //   console.log('projects', response);
     // });
     this.dataService.fetchProjects().subscribe(p => {
+      console.log('p', p);
       this.projects = p;
     });
   }

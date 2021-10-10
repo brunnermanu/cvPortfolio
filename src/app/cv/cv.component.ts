@@ -9,7 +9,7 @@ import { Skills } from '../shared/skills.model';
   styleUrls: ['./cv.component.scss']
 })
 export  class CvComponent implements OnInit {
-  cvData: Cv;
+  cvData: Cv[];
   educationData: Cv;
   skillsData: Skills;
 
@@ -17,7 +17,7 @@ export  class CvComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
+  ngOnInit() {
     // is needed to update my data until my Forms are ready
     // this.data.storeCvData().subscribe(response => {
     //   console.log(response);
@@ -28,10 +28,11 @@ export  class CvComponent implements OnInit {
     // this.data.storeSkillData().subscribe(response => {
     //   console.log(response);
     // });
-
-    this.data.fetchCvData().subscribe(cvData => {
-      this.cvData = cvData;
+    this.data.fetchCvData()
+      .subscribe(cvData => {
+      this.cvData = cvData.reverse();
     });
+
     this.data.fetchEducationData().subscribe((educationData: Cv) => {
       this.educationData = educationData;
     });
